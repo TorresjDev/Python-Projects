@@ -1,20 +1,20 @@
-import numpy as np 
-import matplotlib.pyplot as plt 
+import numpy as np
+import matplotlib.pyplot as plt
 from scipy.io import wavfile
 
-# sample_rate, data = wavfile.read("")
-# print("Sample rate: ", sample_rate)
-# print("Data shape:", data.shape)
+# Load the WAV file (replace "sounds/radar.wav" with your actual file path)
+sample_rate, data = wavfile.read("sounds/radar.wav")
 
-# calculate time values for plotting
-# time = np.linspace(0, len(data)/sample_rate, num=len(data))
-
-# 
-# log_data = 10 * np.log10(np.abs(data) + 1)
-
-# plt.figure(figsize=(12, 6))
-# plt.plot( log_data)
+length = data.shape[0] / sample_rate
+print(f"length = {length}s")
+# Select a smaller segment of data to visualize (e.g., first 0.7 seconds)
+time = np.linspace(0., length, data.shape[0])
+# Mono audio
+plt.plot(time, data, label="Mono Channel")
+# Stereo audio
+# plt.plot(time, data[:, 0], label="Left Channel")
+# plt.plot(time, data[:, 1], label="Right Channel")
+plt.legend()
 plt.xlabel("Time [s]")
-plt.ylabel("Amplitude [dB]")
-plt.title("Sound wave analysis")
+plt.ylabel("Amplitude")
 plt.show()
