@@ -1,0 +1,10 @@
+
+# files removed for python repo
+
+/__pycache__/
+.ipynb_checkpoints/
+
+
+/.vscode/
+
+# End of .gitignore
