@@ -25,7 +25,7 @@ print(apple_info['longName'], ':',
 history_data = stock.history(period="1y")
 
 fig = px.line(history_data, x=history_data.index, y=[
-    'Open', 'High', 'Low', 'Close'], title='Apple Inc. Stock Price Graph - Jesus Torres', labels={
+    'Open', 'High', 'Low', 'Close'], title=f'Jesus Torres - {apple_info["longName"]} - Stock Price Graph', labels={
     'value': 'Stock Price (USD)', 'variable': 'Stock Price Type'})
 
 fig.show(renderer='browser')
