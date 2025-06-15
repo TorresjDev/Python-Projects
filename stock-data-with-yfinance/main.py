@@ -30,4 +30,4 @@ fig = px.line(history_data, x=history_data.index, y=[
 
 fig.show(renderer='browser')
 
-history_data.to_csv('apple_stock_5y_history.csv')
+history_data.to_csv('apple_stock_1y_history.csv')
