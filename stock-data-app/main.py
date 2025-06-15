@@ -33,7 +33,11 @@ end_date = st.date_input("End Date")
 today = date.today()
 
 
-def stream_summary(summary):
+def stream_summary(summary: str):
+    """
+    Function to stream the business summary of the stock.
+    This function takes a summary string and yields each word with a slight delay
+    """
     for word in summary.split(" "):
         yield word + " "
         time.sleep(0.02)  # Simulate a delay for streaming effect

@@ -102,7 +102,7 @@ This application was adapted and deployed by **Jesus Torres** as an assignment f
 
 - The original codebase was provided as part of the course material.
 
-Also Special thanks to the open-source community!
+Also Special thanks to the open-source community and the creators of yfinance and Plotly!
 
 ---
 
