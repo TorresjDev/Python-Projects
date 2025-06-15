@@ -22,10 +22,10 @@ pp.pprint(dict(apple_info))
 print(apple_info['longName'], ':',
       apple_info['sector'], ':', apple_info['industry'])
 
-history_data = stock.history(period="5y")
+history_data = stock.history(period="1y")
 
 fig = px.line(history_data, x=history_data.index, y=[
-    'Open', 'High', 'Low', 'Close'], title='Apple Inc. Stock Prices', labels={
+    'Open', 'High', 'Low', 'Close'], title='Apple Inc. Stock Price Graph - Jesus Torres', labels={
     'value': 'Stock Price (USD)', 'variable': 'Stock Price Type'})
 
 fig.show(renderer='browser')
