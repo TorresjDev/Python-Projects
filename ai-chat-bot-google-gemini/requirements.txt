@@ -1,0 +1,8 @@
+
+python-dotenv
+
+google-genai
+
+requests
+
+
