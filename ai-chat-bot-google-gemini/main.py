@@ -13,9 +13,6 @@ user_name = input("Hello, what shall I call you? ")
 
 print(f"Welcome {user_name}, let's extract text from an image!")
 
-# Test image URL for OCR
-# https://github.com/czhangwt/CIDM4310/blob/main/testocr.png?raw=true
-# https://raw.githubusercontent.com/czhangwt/CIDM4310/refs/heads/main/testocr.png
 image_path = input("Please enter the image URL: ")
 
 # Fetch the image from the URL
@@ -36,7 +33,8 @@ response = client.models.generate_content(
     model="gemini-2.0-flash",
     contents=[
         # image part object for request
-        f"Extract the text from the image, put my name {user_name} at the end of the text in a new line.", image
+        f"Extract the text from the image, put my name {user_name} at the end of the text in a new line.",
+        image
     ],
 )
 

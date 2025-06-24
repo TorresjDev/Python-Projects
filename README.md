@@ -7,6 +7,12 @@ This collection showcases multiple Python-based projects for data analysis, visu
 
 ## 📦 Projects Included
 
+### 🤖 AI Chat Bot with Google Gemini API
+
+- **Description:**  
+  A terminal-based Python application that uses the Google Gemini API to extract text from images via a conversational interface. Prompts the user for their name and an image URL, performs OCR, and appends the user's name to the extracted text.
+- **Location:** `ai-chat-bot-google-gemini/`
+
 ### 📈 Stock Data Application
 
 - **Description:**  
@@ -37,9 +43,10 @@ This collection showcases multiple Python-based projects for data analysis, visu
 ```
 Python-Programs/
 │
-├── stock-data-app/             # Streamlit web app
-├── stock-data-with-yfinance/   # Data analysis & visualization script
-└── README.md                   # This documentation
+├── ai-chat-bot-google-gemini/    # AI chat bot using Google Gemini API
+├── stock-data-app/               # Streamlit web app
+├── stock-data-with-yfinance/     # Data analysis & visualization script
+└── README.md                     # This documentation
 ```
 
 ---
@@ -53,4 +60,4 @@ Special thanks to the open-source community!
 
 ## 📝 License
 
-This repository is for educational and demonstration purposes
+This repository is for educational and demonstration purposes only.
