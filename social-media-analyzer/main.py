@@ -1,33 +1,17 @@
-# Social Media Post Analysis Application
-# Main application entry point
-
+import csv
+import pandas as pd
+import matplotlib.pyplot as plt
+import plotly.express as px
+import requests
 import os
-import sys
-from pathlib import Path
 
-# Add project root to Python path
-project_root = Path(__file__).parent
-sys.path.append(str(project_root))
 
-def main():
-    """
-    Main entry point for the Social Media Post Analysis Application
-    """
-    print("🚀 Social Media Post Analysis Application")
-    print("=" * 50)
-    
-    # TODO: Add application logic here
-    print("📱 Initializing social media analyzer...")
-    print("🔍 Ready to analyze posts!")
-    
-    # Placeholder for future functionality
-    print("\n📊 Available Features:")
-    print("  - Sentiment Analysis")
-    print("  - Engagement Metrics")
-    print("  - Trend Detection")
-    print("  - Data Visualization")
-    
-    print("\n⚠️  Application under development...")
+cvs_file = "socialmediapostdata.csv"
+cvs_url = "https://raw.githubusercontent.com/BuffTechTalk/CIDM6311/main/socialmediapostdata.csv"
 
-if __name__ == "__main__":
-    main()
+if not os.path.exists(cvs_file):
+    response = requests.get(cvs_url)
+    with open(cvs_file, "wb") as csv_file:
+        csv_file.write(response.content)
+
+# Load the dataset

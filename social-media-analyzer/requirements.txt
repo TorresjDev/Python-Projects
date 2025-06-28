@@ -1,32 +1,8 @@
-# Social Media Post Analysis Application Dependencies
+# Social Media Post Analysis - Project Requirements
 
-# Core Data Analysis
+# Core Data Analysis (Required)
 pandas>=2.0.0
-numpy>=1.24.0
 
-# Natural Language Processing
-nltk>=3.8
-textblob>=0.17.1
-# spacy>=3.6.0  # Uncomment if using spaCy
-
-# Data Visualization
+# Data Visualization (Required)
 matplotlib>=3.7.0
-seaborn>=0.12.0
 plotly>=5.15.0
-
-# Web Framework (choose one)
-streamlit>=1.25.0
-
-# API Clients
-tweepy>=4.14.0  # Twitter API
-requests>=2.31.0  # General HTTP requests
-
-# Environment Management
-python-dotenv>=1.0.0
-
-# Data Processing
-scikit-learn>=1.3.0  # For ML-based sentiment analysis
-
-# Optional: Advanced NLP
-# transformers>=4.30.0  # For transformer-based models
-# torch>=2.0.0  # Required for transformers

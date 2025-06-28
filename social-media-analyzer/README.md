@@ -1,59 +1,55 @@
-# 📱 Social Media Post Analysis Application
+# 📱 Social Media Post Analysis - Final Project
 
-A Python application for analyzing social media posts with sentiment analysis, engagement metrics, and trend identification.
+**CIDM 4310/5310 Final Project**  
+Simple social media data analysis using Python, Pandas, Matplotlib, and Plotly Express.
 
-## 🚀 Features
+## 🚀 Quick Start
 
-- **Sentiment Analysis**: Analyze the emotional tone of posts
-- **Engagement Metrics**: Track likes, shares, comments, and reach
-- **Trend Detection**: Identify trending topics and hashtags
-- **Data Visualization**: Interactive charts and graphs
-- **Multi-Platform Support**: Twitter, Instagram, Facebook, LinkedIn
-
-## 🛠️ Tech Stack
-
-- **Python 3.12+**
-- **Natural Language Processing**: NLTK, spaCy, or TextBlob
-- **Data Analysis**: Pandas, NumPy
-- **Visualization**: Matplotlib, Plotly, Seaborn
-- **Web Framework**: Streamlit or Flask
-- **APIs**: Twitter API, Instagram Basic Display API
-
-## 📦 Installation
+### 1. Install Dependencies
 
 ```bash
-# Clone the repository
-git clone https://github.com/TorresjDev/Python-Programs.git
-cd social-media-analyzer
-
-# Create virtual environment
-python -m venv venv
-source venv/bin/activate  # On Windows: venv\Scripts\activate
-
-# Install dependencies
-pip install -r requirements.txt
+# Install required packages
+pip install pandas matplotlib plotly
 ```
 
-## 🔧 Configuration
-
-1. Create a `.env` file with your API keys:
-
-```env
-TWITTER_API_KEY=your_twitter_api_key
-TWITTER_API_SECRET=your_twitter_api_secret
-INSTAGRAM_ACCESS_TOKEN=your_instagram_token
-```
-
-## 📊 Usage
+### 2. Run Analysis
 
 ```bash
+# Run the main analysis
 python main.py
 ```
 
-## 🤝 Contributing
+## 📊 What This Does
 
-This project is part of the West Texas A&M University CIDM 4310/5310 coursework.
+✅ **Loads CSV data** using Pandas  
+✅ **Basic analysis** - counts, statistics, missing values  
+✅ **Matplotlib charts** - histograms, basic plots  
+✅ **Plotly interactive charts** - bar charts, distributions
 
-## 📝 License
+## 📁 Files
 
-Educational and demonstration purposes only.
+- `main.py` - Main analysis script
+- `requirements.txt` - Package dependencies
+
+## 🎯 Assignment Requirements
+
+This covers all the basic requirements:
+
+- ✅ Load CSV with Pandas
+- ✅ Data cleaning and analysis
+- ✅ Matplotlib visualizations
+- ✅ Plotly Express charts
+- ✅ Descriptive statistics
+
+## 📝 For Your Assignment
+
+1. Replace the sample data with your actual dataset
+2. Update the column names in `main.py` to match your data
+3. Add your specific analysis questions
+4. Create the visualizations required by your template
+
+## 🤝 Course Info
+
+**Course:** CIDM 4310/5310  
+**Institution:** West Texas A&M University  
+**Instructor:** Dr. Cheng (Carl) Zhang
