@@ -1,14 +1,22 @@
+# This is a list of files that should be ignored by Git.
+# It includes files that are not necessary for version control, such as temporary files, logs, and environment files.
 
-.env
+# Environment file for storing sensitive information like API keys
+.env 
 
+# Stock data files
 stock-data-with-yfinance/apple_stock_1y_history.csv
-
 stock-data-with-yfinance/apple-1yr-stock-graph.png
 
+# Social media analysis files
 socialmediapostdata.csv
+main-v1.py
+main-template.py
 
+# Python virtual environment directory
 git.txt
 
-main-v1.py
+#  vscode settings and extensions
+.vscode
 
-main-template.py
+
