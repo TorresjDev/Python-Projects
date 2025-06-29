@@ -5,6 +5,10 @@ stock-data-with-yfinance/apple_stock_1y_history.csv
 
 stock-data-with-yfinance/apple-1yr-stock-graph.png
 
-# socialmediapostdata.csv
+socialmediapostdata.csv
 
 git.txt
+
+main-v1.py
+
+main-template.py
