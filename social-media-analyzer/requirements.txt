@@ -1,0 +1,17 @@
+# Social Media Post Analysis - Project Requirements
+
+# Core Data Analysis (Required)
+pandas>=2.0.0
+
+# Data Visualization (Required)
+matplotlib>=3.7.0
+plotly>=5.15.0
+
+# Word Cloud Generation (For text analysis)
+wordcloud>=1.9.2
+
+# HTTP Requests (For downloading CSV data)
+requests>=2.31.0
+
+# Additional HTTP Client (Used in your imports)
+httpx>=0.24.0
