@@ -91,7 +91,7 @@ ai-chat-bot-google-gemini/
 
 ## 🙏 Acknowledgements
 
-This project was created for educational purposes and as a demonstration of integrating Google Gemini's API with Python as an assignment for the CIDM 4310/5310 Business Intelligence and Decision Support Systems course at West Texas A&M University, under the guidance of Dr. Cheng (Carl) Zhang.
+This project was created for educational purposes as a part of integrating Google Gemini's API with Python for the Computer Information and Decision Management Business Intelligence and Decision Support Systems course at West Texas A&M University, under the guidance of Dr. Cheng (Carl) Zhang.
 
 Special thanks to the open-source community and the authors of the libraries used!
 

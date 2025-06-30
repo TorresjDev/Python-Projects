@@ -68,7 +68,8 @@ stock-data-with-yfinance/
 
 ## 🙏 Acknowledgements
 
-This program was adapted and modified by Jesus Torres as an assignment for the CIDM 4310/5310 Business Intelligence and Decision Support Systems course at West Texas A&M University, under the guidance of Dr. Cheng (Carl) Zhang.
+This program was created for educational purposes as
+for the Computer Information and Decision Management Business Intelligence and Decision Support Systems course at West Texas A&M University, under the guidance of Dr. Cheng (Carl) Zhang
 
 - The original codebase was provided as part of the course material.
 
