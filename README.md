@@ -26,6 +26,12 @@ This collection showcases multiple Python-based projects for data analysis, visu
   A Python script that retrieves, analyzes, and visualizes 5 years of Apple Inc. stock data using yfinance and Plotly.
 - **Location:** `stock-data-with-yfinance/`
 
+### 📱 Social Media Post Analysis Application
+
+- **Description:**  
+  A powerful Python tool for analyzing social media posting patterns with interactive visualizations and dynamic celebrity engagement analytics. Features user-selectable author analysis, automated data processing, dual-mode visualizations (matplotlib & Plotly), word cloud generation, and comprehensive engagement metrics tracking.
+- **Location:** `social-media-analyzer/`
+
 ---
 
 ## 🚀 Getting Started
@@ -44,6 +50,7 @@ This collection showcases multiple Python-based projects for data analysis, visu
 Python-Programs/
 │
 ├── ai-chat-bot-google-gemini/    # AI chat bot using Google Gemini API
+├── social-media-analyzer/        # Social media post analysis with dynamic author selection
 ├── stock-data-app/               # Streamlit web app
 ├── stock-data-with-yfinance/     # Data analysis & visualization script
 └── README.md                     # This documentation
