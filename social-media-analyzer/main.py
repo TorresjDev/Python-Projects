@@ -74,17 +74,18 @@ fig = px.line(
     title='Number of Posts per Author per Day')
 fig.show()
 
-# Filter the DataFrame for 'jimmyfallon' only
-jimmy_fallon_data = content_counts[content_counts['author']
-                                   == 'jimmyfallon'].copy()
+# Filter the DataFrame prompt user for input author
+author_name = input(
+    "Please enter the author name to filter (e.g., 'jimmyfallon'): ")
+author_data = content_counts[content_counts['author'] == author_name].copy()
 
 # Ensure that 'date_time' is in datetime format for plotting
-jimmy_fallon_data['date_time'] = pd.to_datetime(jimmy_fallon_data['date_time'])
+author_data['date_time'] = pd.to_datetime(author_data['date_time'])
 
-# Plot the number of posts by Jimmy Fallon per day using matplotlib
+# Plot the number of posts by the selected author per day using matplotlib
 plt.figure(figsize=(12, 6))
-plt.plot(jimmy_fallon_data['date_time'], jimmy_fallon_data['content_count'],
-         label='jimmyfallon', linestyle='-', color='blue')
+plt.plot(author_data['date_time'], author_data['content_count'],
+         label=author_name, linestyle='-', color='blue')
 plt.title('Number of Posts per Author per Day')
 plt.xlabel('Date')
 plt.ylabel('Number of Posts')
@@ -92,20 +93,20 @@ plt.grid(axis='y', linestyle='--')
 plt.tight_layout()
 plt.show()
 
-# Filter the DataFrame for 'jimmyfallon' posts
-jimmy_fallon_posts = post_data[post_data['author'] == 'jimmyfallon']
+# Filter the DataFrame for the selected author's posts
+author_posts = post_data[post_data['author'] == author_name].copy()
 
 # Ensure that 'date_time' is in datetime format for plotting
-jimmy_fallon_posts['date_time'] = pd.to_datetime(
-    jimmy_fallon_posts['date_time'])
+author_posts['date_time'] = pd.to_datetime(
+    author_posts['date_time'])
 
-# Extract the content of Jimmy Fallon's posts
-jimmy_fallon_content = jimmy_fallon_posts['content']
+# Extract the content of the selected author's posts
+author_content = author_posts['content']
 
-print(jimmy_fallon_content)
+print(author_content)
 
-# Generate a word cloud from Jimmy Fallon's posts content
-all_content = ' '.join(jimmy_fallon_content.astype(str))
+# Generate a word cloud from the selected author's posts content
+all_content = ' '.join(author_content.astype(str))
 # Update the stop words to include common words that may not be useful in the word cloud
 updated_stop_words = STOPWORDS.update(["https", "co", "t"])
 # Generate the word cloud using WordCloud from wordcloud library
@@ -119,18 +120,18 @@ plt.axis("off")
 plt.show()
 
 # Convert 'date_time' to datetime format for accurate plotting
-jimmy_fallon_posts['date_time'] = pd.to_datetime(
-    jimmy_fallon_posts['date_time'])
+author_posts['date_time'] = pd.to_datetime(
+    author_posts['date_time'])
 
-print(jimmy_fallon_posts)
+print(author_posts)
 
-# Plot the daily number of likes and shares for Jimmy Fallon using matplotlib
+# Plot the daily number of likes and shares for the selected author using matplotlib
 plt.figure(figsize=(12, 6))
-plt.plot(jimmy_fallon_posts['date_time'], jimmy_fallon_posts['number_of_likes'],
+plt.plot(author_posts['date_time'], author_posts['number_of_likes'],
          label='Daily Likes', linestyle='-', color='blue')
-plt.plot(jimmy_fallon_posts['date_time'], jimmy_fallon_posts['number_of_shares'],
+plt.plot(author_posts['date_time'], author_posts['number_of_shares'],
          label='Daily Shares', linestyle='-', color='orange')
-plt.title('Daily Likes and Shares for Jimmy Fallon')
+plt.title(f'Daily Likes and Shares for {author_name}')
 plt.xlabel('Date')
 plt.ylabel('Count of Likes/Shares')
 plt.legend()
@@ -139,13 +140,13 @@ plt.tight_layout()
 plt.show()
 
 
-# Plot the daily number of likes and shares for Jimmy Fallon using Plotly Express
+# Plot the daily number of likes and shares for the selected author using Plotly Express
 fig = px.line(
-    jimmy_fallon_posts,
+    author_posts,
     x='date_time',
     y=['number_of_likes', 'number_of_shares'],
     labels={'date_time': 'Date', 'value': 'Count'},
-    title='Daily Likes and Shares for Jimmy Fallon',
+    title=f'Daily Likes and Shares for {author_name}',
     markers=True,
     color_discrete_map={'number_of_likes': 'blue',
                         'number_of_shares': 'orange'}
