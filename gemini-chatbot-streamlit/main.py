@@ -1,38 +1,54 @@
-from pydoc import cli
-import re
-from google import genai
-from google.genai import types
+import streamlit as st
+import google.generativeai as genai
 from dotenv import load_dotenv
 import os
-import requests
-import streamlit as st
 
 
 load_dotenv()
 g_api_key = os.getenv("GOOGLE_API_KEY")
+# Default fallback if not set
+gemini_model = os.getenv("GEMINI_MODEL")
 
-# Chatbot Development with Google Gemini API:  build a multi-turn chatbot using the Streamlit framework
+# Configure the Google Gemini API
+genai.configure(api_key=g_api_key)
+
+# Chatbot Development with Google Gemini API: build a multi-turn chatbot using the Streamlit framework
 
 st.title("Google Gemini Chatbot")
 
-st.write("This is a simple chatbot built with Streamlit and Google Gemini API.")
+# Set up the Google Gemini model
+model = genai.GenerativeModel(gemini_model)
 
-user_input = st.text_input("You: ", "")
+# Initialize chat history
+if "messages" not in st.session_state:
+    st.session_state.messages = []
 
-client = genai.Client(api_key=g_api_key)
+# Display chat messages from history on app rerun
+for message in st.session_state.messages:
+    with st.chat_message(message["role"]):
+        st.markdown(message["content"])
 
-response = None
+# React to user input
+if prompt := st.chat_input("Hello! 👋 How can I help you?"):
+    # Add user message to chat history
+    st.session_state.messages.append({"role": "user", "content": prompt})
+    # Display user message in chat message container
+    with st.chat_message("user"):
+        st.markdown(prompt)
 
-if st.button("Send"):
-    response = client.models.generate_content(
-        model="gemini-2.o-flash",
-        contents=[
-            f"User: {user_input}",
-            "Assistant: Hello! How can I assist you today?"
-        ],
-    )
+    with st.chat_message("assistant"):
+        try:
+            # Generate response using Google Gemini
+            response = model.generate_content(prompt)
+            full_response = response.text
 
-if response:
-    st.write(response.text)
-else:
-    st.write("No response from the chatbot.")
+            # Display the response
+            st.markdown(full_response)
+
+            # Add assistant response to chat history
+            st.session_state.messages.append(
+                {"role": "assistant", "content": full_response})
+
+        except Exception as e:
+            st.error(f"Error generating response: {str(e)}")
+            st.error("Please check your Google API key and try again.")

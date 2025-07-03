@@ -3,7 +3,7 @@
 # Core Libraries
 python-dotenv
 
-google-genai
+google-generativeai
 
 streamlit
 
