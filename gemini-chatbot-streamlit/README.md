@@ -115,3 +115,24 @@ Ensure your Google API key has access to the Gemini API and sufficient quota.
 3. **App won't start**
    - Check that Python 3.8+ is installed
    - Verify Streamlit installation: `streamlit --version`
+
+## 📚 References
+
+- [Streamlit Documentation](https://docs.streamlit.io/)
+- [Google Generative AI (Gemini) API](https://ai.google.dev/)
+- [python-dotenv](https://saurabh-kumar.com/python-dotenv/)
+- [Google AI Studio (API Key)](https://makersuite.google.com/app/apikey)
+
+---
+
+## 🙏 Acknowledgements
+
+This application was developed by **Jesus Torres** utilizing modern data science tools and visualization libraries.
+
+Special thanks to the open-source community and the creators of Pandas, Matplotlib, Plotly, and WordCloud!
+
+---
+
+## 📝 License
+
+This project is for educational and demonstration purposes.

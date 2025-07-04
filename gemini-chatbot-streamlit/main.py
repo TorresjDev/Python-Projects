@@ -9,8 +9,18 @@ g_api_key = os.getenv("GOOGLE_API_KEY")
 # Default fallback if not set
 gemini_model = os.getenv("GEMINI_MODEL")
 
+st.set_page_config(page_title="Google Gemini Chatbot", page_icon="🤖")
+
 # Configure the Google Gemini API
-genai.configure(api_key=g_api_key)
+if not g_api_key:
+    st.error("Please set the GOOGLE_API_KEY environment variable.")
+    st.stop()
+# Configure the Google Gemini API
+try:
+    genai.configure(api_key=g_api_key)
+except Exception as e:
+    st.error(f"Error configuring Google Gemini API: {str(e)}")
+    st.stop()
 
 # Chatbot Development with Google Gemini API: build a multi-turn chatbot using the Streamlit framework
 
