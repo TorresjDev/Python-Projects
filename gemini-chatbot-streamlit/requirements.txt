@@ -1,0 +1,10 @@
+# Gemini Chatbot Streamlit Requirements
+
+# Core Libraries
+python-dotenv
+
+google-generativeai
+
+streamlit
+
+requests
