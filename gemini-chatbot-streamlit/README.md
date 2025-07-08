@@ -95,8 +95,8 @@ gemini-chatbot-streamlit/
 ├── chatbot.py           # 🤖 Chat logic & conversation memory
 ├── ui.py                # 🎨 User interface components
 ├── requirements.txt     # 📦 Python dependencies
-├── README.md           # 📖 Project documentation
-└── .env                # 🔐 Environment variables (create this)
+├── README.md            # 📖 Project documentation
+└── .env                 # 🔐 Environment variables (create this)
 ```
 
 ### **Module Responsibilities**

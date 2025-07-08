@@ -59,6 +59,7 @@ Python-Programs/
 │
 ├── ai-chat-bot-google-gemini/    # AI chat bot using Google Gemini API
 ├── gemini-chatbot-streamlit/     # Modern conversational chatbot with Streamlit
+├── gemini-chatbot-streamlit/     # Modern conversational chatbot with Streamlit
 ├── social-media-analyzer/        # Social media post analysis with dynamic author selection
 ├── stock-data-app/               # Streamlit web app
 ├── stock-data-with-yfinance/     # Data analysis & visualization script
