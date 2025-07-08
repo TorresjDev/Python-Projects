@@ -19,6 +19,7 @@ This collection showcases multiple Python-based projects for data analysis, visu
   A modern web-based conversational AI chatbot built with Streamlit and Google's Gemini API. Features smart conversation memory, modular architecture, and a clean chat interface. The bot remembers conversation context and provides natural, flowing discussions.
 - **Location:** `gemini-chatbot-streamlit/`
 - **Key Features:** Multi-turn conversations, environment configuration, session management, responsive design
+- **Live Demo:** [Try it Live on Streamlit Cloud](https://gemini-chatbot-app-btde8kwdrhhftiappiw9nky.streamlit.app/)
 
 ### 📈 Stock Data Application
 
@@ -57,6 +58,7 @@ This collection showcases multiple Python-based projects for data analysis, visu
 Python-Programs/
 │
 ├── ai-chat-bot-google-gemini/    # AI chat bot using Google Gemini API
+├── gemini-chatbot-streamlit/     # Modern conversational chatbot with Streamlit
 ├── gemini-chatbot-streamlit/     # Modern conversational chatbot with Streamlit
 ├── social-media-analyzer/        # Social media post analysis with dynamic author selection
 ├── stock-data-app/               # Streamlit web app
