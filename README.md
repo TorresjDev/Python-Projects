@@ -13,6 +13,13 @@ This collection showcases multiple Python-based projects for data analysis, visu
   A terminal-based Python application that uses the Google Gemini API to extract text from images via a conversational interface. Prompts the user for their name and an image URL, performs OCR, and appends the user's name to the extracted text.
 - **Location:** `ai-chat-bot-google-gemini/`
 
+### 🤖 Gemini Chatbot with Streamlit
+
+- **Description:**  
+  A modern web-based conversational AI chatbot built with Streamlit and Google's Gemini API. Features smart conversation memory, modular architecture, and a clean chat interface. The bot remembers conversation context and provides natural, flowing discussions.
+- **Location:** `gemini-chatbot-streamlit/`
+- **Key Features:** Multi-turn conversations, environment configuration, session management, responsive design
+
 ### 📈 Stock Data Application
 
 - **Description:**  
@@ -40,7 +47,7 @@ This collection showcases multiple Python-based projects for data analysis, visu
    ```bash
    git clone https://github.com/your-username/Python-Programs.git
    ```
-2. **Explore each project’s folder** for its own README and setup instructions.
+2. **Explore each project's folder** for its own README and setup instructions.
 
 ---
 
@@ -50,6 +57,7 @@ This collection showcases multiple Python-based projects for data analysis, visu
 Python-Programs/
 │
 ├── ai-chat-bot-google-gemini/    # AI chat bot using Google Gemini API
+├── gemini-chatbot-streamlit/     # Modern conversational chatbot with Streamlit
 ├── social-media-analyzer/        # Social media post analysis with dynamic author selection
 ├── stock-data-app/               # Streamlit web app
 ├── stock-data-with-yfinance/     # Data analysis & visualization script
