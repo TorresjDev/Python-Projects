@@ -118,7 +118,7 @@ The dynamic author selection feature allows users to analyze any celebrity, infl
 
 ## 🙏 Acknowledgements
 
-This application was developed by **Jesus Torres** utilizing modern data science tools and visualization libraries.
+This application was developed utilizing modern data science tools and visualization libraries. For the Computer Information and Decision Management Business Intelligence and Decision Support Systems course at West Texas A&M University, under the guidance of Dr. Cheng (Carl) Zhang.
 
 Special thanks to the open-source community and the creators of Pandas, Matplotlib, Plotly, and WordCloud!
 
