@@ -4,6 +4,12 @@ Hey👋 welcome to my conversational AI chatbot using Python, Streamlit, and Goo
 
 I spent a lot of time thinking about code organization here. Instead of cramming everything into one massive file, I broke it down into focused modules that each handle their own thing. It makes the code so much easier to understand and work with.
 
+## 🚀 **Try It Live!**
+
+**[🌐 Live Demo - Try the Chatbot Now!](https://gemini-chatbot-app-btde8kwdrhhftiappiw9nky.streamlit.app/)**
+
+_Click the link above to interact with the chatbot directly in your browser - no setup required!_
+
 ## What This Thing Does
 
 - **Clean Chat Interface**: Built with Streamlit, so it looks modern and works great
@@ -39,6 +45,12 @@ I wanted each file to have one job and do it well:
 - **python-dotenv** - Manages environment variables
 
 ## 🚀 Getting Started
+
+### **Option 1: Try the Live Demo (Easiest)**
+
+Just click the [**Live Demo Link**](https://gemini-chatbot-app-btde8kwdrhhftiappiw9nky.streamlit.app/) above - no installation needed!
+
+### **Option 2: Run Locally**
 
 ### 1. Prerequisites
 
@@ -83,8 +95,8 @@ gemini-chatbot-streamlit/
 ├── chatbot.py           # 🤖 Chat logic & conversation memory
 ├── ui.py                # 🎨 User interface components
 ├── requirements.txt     # 📦 Python dependencies
-├── README.md           # 📖 Project documentation
-└── .env                # 🔐 Environment variables (create this)
+├── README.md            # 📖 Project documentation
+└── .env                 # 🔐 Environment variables (create this)
 ```
 
 ### **Module Responsibilities**
@@ -100,7 +112,7 @@ gemini-chatbot-streamlit/
 
 ### **Starting the Application**
 
-1. Run `streamlit run main.py`
+1. Run `streamlit run main.py` (or try the [live demo](https://gemini-chatbot-app-btde8kwdrhhftiappiw9nky.streamlit.app/))
 2. The app automatically:
    - Loads your `.env` configuration
    - Initializes the Gemini AI model
