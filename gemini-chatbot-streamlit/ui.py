@@ -54,7 +54,7 @@ def handle_user_input(chatbot):
             st.markdown(prompt)
 
         # Generate AI response
-        with st.chat_message("assistant"):
+        with st.chat_message("ai"):
             success, response = chatbot.get_ai_response(
                 st.session_state.messages)
 
@@ -62,7 +62,7 @@ def handle_user_input(chatbot):
                 st.markdown(response)
                 # Add AI response to history
                 st.session_state.messages.append({
-                    "role": "assistant",
+                    "role": "ai",
                     "content": response
                 })
             else:

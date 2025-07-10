@@ -14,27 +14,30 @@ class ChatBot:
     def build_context(self, messages):
         """Build conversation context for better memory"""
 
-        # If this is the first message, just return it
-        if len(messages) <= 1:
-            return messages[-1]["content"]
+        # If no messages, return empty context
+        if len(messages) == 0:
+            return ""
+        # If only one message, return its content
+        elif len(messages) == 1:
+            return messages[0]["content"]
 
-        # Build simple context with recent messages
-        context_parts = ["Here's our conversation so far:"]
+        # Build context with coversation history
+        context_parts = ["Recent conversation:"]
 
-        # Get last 10 messages (5 exchanges)
-        recent_messages = messages[-10:]
+        # Limit to last 12 recent messages for context build
+        recent_messages = messages[-12:]
 
-        # Add each message to context
-        for msg in recent_messages[:-1]:  # Don't include current message
-            role = "You" if msg["role"] == "user" else "Me"
+        # Organize messages into User/AI format except the last message
+        for msg in recent_messages[:-1]:
+            role = "User" if msg["role"] == "user" else "AI"
             context_parts.append(f"{role}: {msg['content']}")
 
         # Add current message
-        current_msg = messages[-1]["content"]
-        context_parts.append(f"You: {current_msg}")
-        context_parts.append("Me:")
+        context_parts.append(f"User: {messages[-1]['content']} ")
+        context_parts.append("AI:")
 
-        return "\n".join(context_parts)
+        # print(context_parts)
+        return context_parts
 
     def get_ai_response(self, messages):
         """Get response from AI model"""
