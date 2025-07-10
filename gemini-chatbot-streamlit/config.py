@@ -9,10 +9,10 @@ import google.generativeai as genai
 
 
 class Config:
-    """Simple configuration class"""
+    """Configuration class"""
 
     def __init__(self):
-        """Initialize config"""
+        """Constructor method for initializing the Config class"""
         self.api_key = None
         self.model_name = None
         self.model = None

@@ -33,6 +33,7 @@ def main():
 
     # Show interface
 
+    ui.show_clear_button()
     ui.show_chat_history()
     ui.handle_user_input(chatbot)
 

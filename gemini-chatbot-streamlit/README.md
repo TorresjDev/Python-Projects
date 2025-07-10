@@ -138,7 +138,6 @@ Here's what gets installed when you run `pip install -r requirements.txt`:
 - **`python-dotenv`** - Loads environment variables from `.env` files
 - **`google-generativeai`** - Google's official Gemini API client
 - **`streamlit`** - Web framework for building the chat interface
-- **`requests`** - HTTP library for API calls (dependency of google-generativeai)
 
 ## ⚙️ Configuration Options
 
