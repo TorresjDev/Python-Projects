@@ -9,34 +9,24 @@ This comprehensive platform provides deep insights into social media behavior, f
 
 ## 🚀 Key Features
 
-- **Interactive User Interface**: Welcomes users with clear instructions and prompts for both CSV data URL input and author selection.
-- **Dynamic Author Selection**: Users can choose any author from the dataset for focused analysis, making it flexible for any celebrity or influencer.
-- **Flexible Data Source**: Accepts custom CSV URLs or uses default environment configuration for seamless data loading.
-- **Intelligent Data Pipeline**: Automatically downloads and processes social media datasets with built-in file existence checking.
-- **Advanced Data Cleaning**: Removes unnecessary columns (country, id, language, latitude, longitude) for focused analysis.
-- **Multi-Author Time Series Analysis**: Converts timestamps and tracks posting patterns across different social media accounts.
-- **Dual Visualization Engine**: Creates both static matplotlib charts and interactive Plotly Express visualizations.
-- **Personalized Celebrity Analysis**: Deep-dive into any selected author's posting patterns, engagement metrics, and content themes.
-- **Engagement Analytics**: Analyzes likes and shares data with comparative trend visualization for the chosen author.
-- **Advanced Text Processing**: Generates beautiful word clouds from post content with intelligent stop-word filtering.
-- **Professional User Experience**: Includes welcome messages, progress updates, and friendly conclusion messages.
+- **Interactive prompts** for CSV input and author selection
+- **Flexible data sources**: custom URL or environment default
+- **Automatic data download and cleaning**
+- **Multi-author time series and engagement analysis**
+- **Dual visualizations**: static (matplotlib) & interactive (Plotly)
+- **Word cloud generation** for content themes
+- **Professional user experience** with progress updates
 
 ---
 
 ## 📊 What This Application Does
 
-✅ **Interactive user onboarding** with welcome messages and clear instructions  
-✅ **Flexible data input** - accepts custom URLs or uses environment defaults  
-✅ **Smart data downloading** - automatically fetches CSV files when needed  
-✅ **Comprehensive data cleaning** - removes geographic and metadata columns  
-✅ **Advanced time series processing** - converts datetime formats for analysis  
-✅ **Multi-author analytics** - tracks posting frequency across all social media accounts  
-✅ **Dynamic author selection** - user chooses which celebrity/influencer to analyze in detail  
-✅ **Personalized engagement metrics** - likes and shares analysis for the selected author  
-✅ **Static visualizations** - professional matplotlib charts with grid styling  
-✅ **Interactive charts** - Plotly Express with hover effects, zoom, and responsive design  
-✅ **Custom text analytics** - word cloud generation from the chosen author's content  
-✅ **User experience design** - progress updates and friendly conclusion messages
+- Guides users with clear instructions
+- Loads and cleans social media data
+- Lets you pick any author for analysis
+- Shows posting patterns and engagement metrics
+- Visualizes results with charts and word clouds
+- Provides a smooth, interactive workflow
 
 ---
 
