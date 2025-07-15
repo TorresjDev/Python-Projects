@@ -14,7 +14,11 @@ def setup_page():
         layout="wide"
     )
 
-    st.title("🤖 Google Gemini Chatbot")
+    # Center the title using HTML and st.markdown
+    st.markdown(
+        "<h1 style='text-align: center;'>🤖 Google Gemini Chatbot</h1>",
+        unsafe_allow_html=True
+    )
 
 
 def show_clear_button():
