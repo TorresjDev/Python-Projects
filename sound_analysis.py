@@ -6,11 +6,11 @@ from sound_visualization import plot_signal, plot_spectrogram
 # Load and read the WAV file
 wav_obj = wave.open("sounds/decibel-10s.wav", "rb") # rb mode returns a "read only" object
 
-sample_freq, total_samples, signal_duration, num_audio_channel, raw_signal_wave, signal_amplitude_array = wave_info(wav_obj)
+sample_freq, total_samples, wave_duration, num_audio_channel, raw_signal_wave, signal_amplitude_array = wave_info(wav_obj)
 
 print(f"Sample frequency: {sample_freq} Hz")
 print(f"Number of samples: {total_samples}")
-print(f"Duration of the sound file: {signal_duration} s")
+print(f"Duration of the sound file: {wave_duration} s")
 print(f"Number of audio channels: {num_audio_channel}")
 # print(f"Audio data: {raw_signal_wave}")
 print(f"Audio data as numpy array: {signal_amplitude_array}")
@@ -48,6 +48,6 @@ print(f"Smallest dB level: {smallest_dB}")
 waveform_dbfs = wave_to_dbfs(waveform)
 print(f"Waveform in decibels relative to full scale: {waveform_dbfs}")
 
-plot_signal(waveform, sample_freq, signal_duration, channel_type) # Plot the signal waveform
+plot_signal(waveform, sample_freq, wave_duration, channel_type) # Plot the signal waveform
 
 plot_spectrogram(waveform, sample_freq) # Plot the spectrogram

@@ -15,15 +15,15 @@ def wave_info(wav_obj):
         wav_obj: A wave object representing the audio signal.
 
     Returns:
-        tuple: (sample_freq, total_samples, signal_duration, num_audio_channel, raw_signal_wave, signal_amplitude_array)
+        tuple: (sample_freq, wave_duration, signal_duration, num_audio_channel, raw_signal_wave, signal_amplitude_array)
     """
-    sample_freq = wav_obj.getframerate()  # Sample frequency of the sound file in (Hz)
-    total_samples = wav_obj.getnframes()  # Total number of frames (samples) in the sound file
-    signal_duration = total_samples / sample_freq  # Calculate the duration of the sound file in seconds
+    sample_freq = wav_obj.getframerate()  # Sample frequency in (Hz)
+    wave_duration = wav_obj.getnframes()  # Total number of audio frames
+    signal_duration = wave_duration / sample_freq  # Calculate the duration of the sound file in seconds
     num_audio_channel = wav_obj.getnchannels()  # Number of audio channels in the sound file
-    raw_signal_wave = wav_obj.readframes(total_samples)  # Read the sound file and return audio data object
+    raw_signal_wave = wav_obj.readframes(wave_duration)  # Read the sound file and return audio data object
     signal_amplitude_array = np.frombuffer(raw_signal_wave, dtype=np.int16)  # Convert the audio data to a numpy array as a 16-bit signed integer
-    return sample_freq, total_samples, signal_duration, num_audio_channel, raw_signal_wave, signal_amplitude_array
+    return sample_freq, wave_duration, signal_duration, num_audio_channel, raw_signal_wave, signal_amplitude_array
 
 # * Converting a waveform to decibels (dB)
 def wave_to_db(waveform):
