@@ -10,41 +10,41 @@ This collection showcases multiple Python-based projects for data analysis, visu
 ### 🤖 AI Chat Bot with Google Gemini API
 
 - **Description:**  
-  A terminal-based Python application that uses the Google Gemini API to extract text from images via a conversational interface. Prompts the user for their name and an image URL, performs OCR, and appends the user's name to the extracted text.
-- **Location:** `ai-chat-bot-google-gemini/`
+  A terminal-based Python application that uses the Google Gemini API...
+- **Location:** [ai-chat-bot-google-gemini/](ai-chat-bot-google-gemini/)
 
 ### 🤖 Gemini Chatbot with Streamlit
 
 - **Description:**  
-  A modern web-based conversational AI chatbot built with Streamlit and Google's Gemini API. Features smart conversation memory, modular architecture, and a clean chat interface. The bot remembers conversation context and provides natural, flowing discussions.
-- **Location:** `gemini-chatbot-streamlit/`
-- **Key Features:** Multi-turn conversations, environment configuration, session management, responsive design
+  A modern web-based conversational AI chatbot built with Streamlit...
+- **Location:** [gemini-chatbot-streamlit/](gemini-chatbot-streamlit/)
+- **Key Features:** Multi-turn conversations, ...
 - **Live Demo:** [Try it Live on Streamlit Cloud](https://gemini-chatbot-app-btde8kwdrhhftiappiw9nky.streamlit.app/)
 
 ### 📈 Stock Data Application
 
 - **Description:**  
-  An interactive Streamlit web app for exploring historical stock prices and company information.
-- **Location:** `stock-data-app/`
+  An interactive Streamlit web app for exploring historical stock prices...
+- **Location:** [stock-data-app/](stock-data-app/)
 - **Live Demo:** [View on Streamlit Cloud](https://python-programs-v9puvb4eqw5cfalfr8qgdi.streamlit.app/)
 
 ### 🍏 Stock Data with yfinance
 
 - **Description:**  
-  A Python script that retrieves, analyzes, and visualizes 5 years of Apple Inc. stock data using yfinance and Plotly.
-- **Location:** `stock-data-with-yfinance/`
+  A Python script that retrieves, analyzes, and visualizes 5 years of Apple Inc. stock data...
+- **Location:** [stock-data-with-yfinance/](stock-data-with-yfinance/)
 
 ### 📱 Social Media Post Analysis Application
 
 - **Description:**  
-  A powerful Python tool for analyzing social media posting patterns with interactive visualizations and dynamic celebrity engagement analytics. Features user-selectable author analysis, automated data processing, dual-mode visualizations (matplotlib & Plotly), word cloud generation, and comprehensive engagement metrics tracking.
-- **Location:** `social-media-analyzer/`
+  A powerful Python tool for analyzing social media posting patterns...
+- **Location:** [social-media-analyzer/](social-media-analyzer/)
 
 ### 🎵 Sound Wave Analysis
 
 - **Description:**  
-  Advanced audio analysis toolkit for processing sound waves and acoustic data. Features comprehensive frequency spectrum analysis, waveform visualization, decibel measurement, and audio signal processing capabilities. Includes interactive Jupyter notebooks for exploratory data analysis and modular components for custom audio processing workflows.
-- **Location:** `sound-wave-analysis/`
+  Advanced audio analysis toolkit for processing sound waves and acoustic data...
+- **Location:** [sound-wave-analysis/](sound-wave-analysis/)
 - **Key Features:** Frequency analysis, amplitude visualization, audio file processing, interactive notebooks, modular analyzer components
 
 ---
