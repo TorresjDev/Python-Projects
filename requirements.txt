@@ -1,0 +1,16 @@
+# Core dependencies for Sound Wave Analysis
+numpy>=1.21.0
+matplotlib>=3.5.0
+scipy>=1.7.0
+
+# Enhanced user interface
+keyboard>=0.13.5
+
+# Optional dependencies for enhanced functionality
+wave>=0.0.2
+jupyter>=1.0.0
+
+# Development dependencies (optional)
+# pytest>=6.0.0
+# black>=21.0.0
+# flake8>=3.9.0
