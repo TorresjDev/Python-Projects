@@ -1,7 +1,7 @@
 # 🎶 **Sound Wave Analysis Project** 🌊
 
 <p align="center">
-  <img src="https://torresjdev.github.io/Nextjs-Asset-Host/assets/covers/projects/sound-wave-analysis-project.png" alt="Sound Wave Analysis" width="300"/>
+  <img src="https://torresjdev.github.io/Nextjs-Asset-Host/assets/covers/projects/sound-wave-analysis-project.png" alt="Sound Wave Analysis" height="450" width="95%"/>
 </p>
 
 A **Visual representation tool** for **Physics - Sound Waves** analysis using Python. This application leverages the latest features and libraries to provide an intuitive interface for analyzing sound waves and generating detailed visualizations. This program is a terminal-based application that allows users to interactively select audio files, perform various analyses, and visualize the results in a clean and professional manner.
