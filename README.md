@@ -40,6 +40,13 @@ This collection showcases multiple Python-based projects for data analysis, visu
   A powerful Python tool for analyzing social media posting patterns with interactive visualizations and dynamic celebrity engagement analytics. Features user-selectable author analysis, automated data processing, dual-mode visualizations (matplotlib & Plotly), word cloud generation, and comprehensive engagement metrics tracking.
 - **Location:** `social-media-analyzer/`
 
+### 🎵 Sound Wave Analysis
+
+- **Description:**  
+  Advanced audio analysis toolkit for processing sound waves and acoustic data. Features comprehensive frequency spectrum analysis, waveform visualization, decibel measurement, and audio signal processing capabilities. Includes interactive Jupyter notebooks for exploratory data analysis and modular components for custom audio processing workflows.
+- **Location:** `sound-wave-analysis/`
+- **Key Features:** Frequency analysis, amplitude visualization, audio file processing, interactive notebooks, modular analyzer components
+
 ---
 
 ## 🚀 Getting Started
@@ -59,8 +66,8 @@ Python-Programs/
 │
 ├── ai-chat-bot-google-gemini/    # AI chat bot using Google Gemini API
 ├── gemini-chatbot-streamlit/     # Modern conversational chatbot with Streamlit
-├── gemini-chatbot-streamlit/     # Modern conversational chatbot with Streamlit
 ├── social-media-analyzer/        # Social media post analysis with dynamic author selection
+├── sound-wave-analysis/          # Advanced audio analysis and signal processing
 ├── stock-data-app/               # Streamlit web app
 ├── stock-data-with-yfinance/     # Data analysis & visualization script
 └── README.md                     # This documentation
