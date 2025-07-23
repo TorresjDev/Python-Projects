@@ -162,3 +162,7 @@ data/space_odyssey_radar.wav
 output/
 temp/
 *.tmp
+
+
+# jupyter
+*notebooks/
