@@ -17,19 +17,19 @@ def main():
     """Main function - clean and modular."""
     print("🌊 Welcome to Sound Wave Analysis!")
     print("=" * 40)
-    
+
     # Let user select a WAV file
     selected_file = select_wav_file()
-    
+
     if selected_file:
         print(f"\n🎯 Analyzing: {os.path.basename(selected_file)}")
-        
+
         # Get analysis options
         options = get_analysis_options()
-        
+
         # Perform analysis using the analyzer module
         perform_complete_analysis(
-            selected_file, 
+            selected_file,
             show_plots=options["show_plots"],
             save_figures=options["save_figures"]
         )
