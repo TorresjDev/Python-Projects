@@ -105,6 +105,7 @@ COINMARKETCAP_API_KEY=your_api_key_here
 
 - Ensure the virtual environment is activated before running or installing any Python packages.
 - Always keep your `requirements.txt` file updated by running:
+
   ```bash
   pip freeze > requirements.txt
 
