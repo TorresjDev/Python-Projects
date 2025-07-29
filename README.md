@@ -19,7 +19,43 @@ This collection showcases multiple Python-based projects for data analysis, visu
 - **Key Features:** Multi-turn conversations, ...
 - **Live Demo:** [Try it Live on Streamlit Cloud](https://gemini-chatbot-app-btde8kwdrhhftiappiw9nky.streamlit.app/)
 
-### 📱 [Social Media Post Analysis Application](https://github.com/TorresjDev/Python-Projects/tree/main/social-media-analyzer)
+### 📈 Stock Data Application
+
+- **Description:**  
+  An interactive Streamlit web app for exploring historical stock prices...
+- **Location:** [stock-data-app/](stock-data-app/)
+- **Live Demo:** [View on Streamlit Cloud](https://python-programs-v9puvb4eqw5cfalfr8qgdi.streamlit.app/)
+
+### 🍏 Stock Data with yfinance
+
+- **Description:**  
+  A Python script that retrieves, analyzes, and visualizes 5 years of Apple Inc. stock data...
+- **Location:** [stock-data-with-yfinance/](stock-data-with-yfinance/)
+
+### 📊 Stock & Crypto Monitor App
+
+- **Description:**  
+  An interactive Streamlit web application for real-time stock and cryptocurrency monitoring...
+- **Location:** [stock-monitor-app/](stock-monitor-app/)
+- **Key Features:** Real-time stock data via Yahoo Finance, cryptocurrency tracking via CoinMarketCap API, interactive charts, multi-asset monitoring dashboard
+- **Tech Stack:** Streamlit, yfinance, CoinMarketCap API, python-dotenv
+
+### 📱 Social Media Post Analysis Application
+
+### 📈 Stock Data Application
+
+- **Description:**  
+  An interactive Streamlit web app for exploring historical stock prices...
+- **Location:** [stock-data-app/](stock-data-app/)
+- **Live Demo:** [View on Streamlit Cloud](https://python-programs-v9puvb4eqw5cfalfr8qgdi.streamlit.app/)
+
+### 🍏 Stock Data with yfinance
+
+- **Description:**  
+  A Python script that retrieves, analyzes, and visualizes 5 years of Apple Inc. stock data...
+- **Location:** [stock-data-with-yfinance/](stock-data-with-yfinance/)
+
+### 📱 Social Media Post Analysis Application
 
 - **Description:**  
   A powerful Python tool for analyzing social media posting patterns...
@@ -29,7 +65,7 @@ This collection showcases multiple Python-based projects for data analysis, visu
 - **Description:**  
   Advanced audio analysis toolkit for processing sound waves and acoustic data...
 - **Key Features:** Frequency analysis, amplitude visualization, audio file processing, interactive notebooks, modular analyzer components
-  
+
 ### 📈 [Stock Data Application](https://github.com/TorresjDev/Python-Projects/tree/main/stock-data-app)
 
 - **Description:**  
@@ -40,7 +76,6 @@ This collection showcases multiple Python-based projects for data analysis, visu
 
 - **Description:**  
   A Python script that retrieves, analyzes, and visualizes 5 years of Apple Inc. stock data...
-
 
 ---
 
