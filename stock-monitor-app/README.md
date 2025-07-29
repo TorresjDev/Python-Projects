@@ -7,34 +7,23 @@ A simple and interactive web application to monitor stock and cryptocurrency dat
 ## 📂 Project Structure
 
 ```plaintext
-stock_crypto_app/
+stock-monitor-app/
 │
-├── data/
-│   ├── raw/                     # Raw data from APIs (optional)
-│   ├── processed/               # Processed data (optional)
-│   └── example_data.csv         # Example datasets for initial development/testing
-│
-├── src/
-│   ├── components/              # Reusable UI components for Streamlit
-│   ├── logic/                   # Business logic and data processing
-│   └── app.py                   # Main Streamlit app entry point
-│
-├── tests/                         # Unit tests for APIs and logic
-├── config.py                      # Configuration file for API keys, etc.
-├── requirements.txt               # Python dependencies
-├── README.md                      # Project overview and setup instructions
-└── .gitignore                     # Git ignored files and directories
+├── main.py                      # Main Streamlit app entry point
+├── requirements.txt             # Python dependencies
+├── README.md                    # Project overview and setup instructions
+├── .env                         # Environment variables (API keys)
+└── .gitignore                   # Git ignored files and directories
 ```
 
 ---
 
 ## 🛠️ Setup Instructions
 
-### **1. Clone the Repository**
+### **1. Navigate to the Stock Monitor App**
 
 ```bash
-git clone https://github.com/your-username/stock_crypto_app.git
-cd stock_crypto_app
+cd stock-monitor-app
 ```
 
 ### **2. Set Up the Virtual Environment**
@@ -77,7 +66,7 @@ pip install -r requirements.txt
 Start the app locally using Streamlit:
 
 ```bash
-streamlit run app.py
+streamlit run main.py
 ```
 
 - After running this command, the app will open in your default browser at `http://localhost:8501`.
@@ -103,11 +92,11 @@ streamlit run app.py
 ## 🔑 API Key Configuration
 
 1. Sign up for a free [CoinMarketCap API Key](https://coinmarketcap.com/api/).
-2. Save the API key in `config.py`:
+2. Create a `.env` file in the project root and add your API key:
 
-```python
-# config.py
-COINMARKETCAP_API_KEY = "your_api_key_here"
+```bash
+# .env
+COINMARKETCAP_API_KEY=your_api_key_here
 ```
 
 ---
