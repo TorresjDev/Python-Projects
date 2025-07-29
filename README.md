@@ -34,7 +34,15 @@ This collection showcases multiple Python-based projects for data analysis, visu
   A Python script that retrieves, analyzes, and visualizes 5 years of Apple Inc. stock data...
 - **Location:** [stock-data-with-yfinance/](stock-data-with-yfinance/)
 
-### 📱 Social Media Post Analysis Application
+### � Stock & Crypto Monitor App
+
+- **Description:**  
+  An interactive Streamlit web application for real-time stock and cryptocurrency monitoring...
+- **Location:** [stock-monitor-app/](stock-monitor-app/)
+- **Key Features:** Real-time stock data via Yahoo Finance, cryptocurrency tracking via CoinMarketCap API, interactive charts, multi-asset monitoring dashboard
+- **Tech Stack:** Streamlit, yfinance, CoinMarketCap API, python-dotenv
+
+### �📱 Social Media Post Analysis Application
 
 - **Description:**  
   A powerful Python tool for analyzing social media posting patterns...
