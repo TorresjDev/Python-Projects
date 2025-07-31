@@ -26,4 +26,10 @@ __pycache__/
 stock-monitor-app/.env
 stock-monitor-app/venv/
 
+# Web Scraper specific
+web-scrapper/downloads/
+web-scrapper/scraper.log
+web-scrapper/config.py
+web-scrapper/.env
+
 

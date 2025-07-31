@@ -66,7 +66,15 @@ This collection showcases multiple Python-based projects for data analysis, visu
   Advanced audio analysis toolkit for processing sound waves and acoustic data...
 - **Key Features:** Frequency analysis, amplitude visualization, audio file processing, interactive notebooks, modular analyzer components
 
-### 📈 [Stock Data Application](https://github.com/TorresjDev/Python-Projects/tree/main/stock-data-app)
+### �️ Python Web Scraper
+
+- **Description:**  
+  A powerful and flexible web scraping tool that discovers, categorizes, and downloads digital files from websites...
+- **Location:** [web-scrapper/](web-scrapper/)
+- **Key Features:** Multi-format support, smart file categorization, domain filtering, progress tracking, comprehensive logging
+- **Tech Stack:** Python, Requests, BeautifulSoup, tqdm
+
+### �📈 [Stock Data Application](https://github.com/TorresjDev/Python-Projects/tree/main/stock-data-app)
 
 - **Description:**  
   An interactive Streamlit web app for exploring historical stock prices...
