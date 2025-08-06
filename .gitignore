@@ -22,4 +22,8 @@ git.txt
 # Python cache files
 __pycache__/
 
+# Repository analysis and recovery tools (local use only)
+analyze_contributions.sh
+md-docs/recover_sound_wave_history.sh
+
 
