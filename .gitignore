@@ -33,3 +33,9 @@ web-scrapper/config.py
 web-scrapper/.env
 
 
+# ignore python notebooks
+*.ipynb_checkpoints/
+
+# ignore .pyc files
+*.pyc
+
