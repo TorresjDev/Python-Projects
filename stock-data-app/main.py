@@ -17,9 +17,6 @@ st.write("""
 # Brief description of the app's purpose
 st.write("This app retrieves stock data from Yahoo Finance API and displays it in a user-friendly format.")
 
-# Define a list of popular stock symbols
-stock_list = ['MSFT', 'AAPL', 'AMZN', 'GOOGL',
-              'TSLA', 'META', 'NFLX', 'NVDA', 'PLTR',]
 
 # Create a dropdown menu for selecting a stock
 stock_name = st.selectbox('Select a stock to check', options=stock_list)
