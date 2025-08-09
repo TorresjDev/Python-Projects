@@ -2,7 +2,10 @@
 # It includes files that are not necessary for version control, such as temporary files, logs, and environment files.
 
 # Environment file for storing sensitive information like API keys
-.env 
+.env
+
+# Python virtual environment directory
+venv/
 
 # Stock data files
 stock-data-with-yfinance/apple_stock_1y_history.csv
@@ -13,8 +16,6 @@ socialmediapostdata.csv
 main-v1.py
 main-template.py
 
-# Python virtual environment directory
-git.txt
 
 #  vscode settings and extensions
 .vscode
@@ -32,4 +33,7 @@ web-scrapper/scraper.log
 web-scrapper/config.py
 web-scrapper/.env
 
+# Project Overview files
+PROJECT_OVERVIEW.md
 
+git.txt

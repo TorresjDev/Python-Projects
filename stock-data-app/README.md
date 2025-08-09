@@ -62,22 +62,6 @@ stock-data-app/
 
 ---
 
-## 📊 Supported Stocks
-
-Choose from a curated list of popular stocks:
-
-- Microsoft (MSFT)
-- Apple (AAPL)
-- Amazon (AMZN)
-- Google (GOOGL)
-- Tesla (TSLA)
-- Meta (META)
-- Netflix (NFLX)
-- Nvidia (NVDA)
-- Palantir (PLTR)
-
----
-
 ## 🌐 Deployment
 
 This app can be deployed for free using [Streamlit Community Cloud](https://streamlit.io/cloud):
