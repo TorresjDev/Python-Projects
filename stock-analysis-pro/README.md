@@ -12,7 +12,7 @@ A comprehensive, professional-grade stock analysis application that provides rea
 
 **Try it now:** [**Stock Analysis Pro - Live Demo**](https://stock-analysis-pro.streamlit.app/)
 
-✨ *Experience professional-grade stock analysis directly in your browser!*
+✨ _Experience professional-grade stock analysis directly in your browser!_
 
 ## ✨ Features
 
@@ -65,7 +65,7 @@ streamlit run main.py
 
 **OR**
 
-**Try the live version:** [**Stock Analysis Pro**](https://stock-analysis-pro.streamlit.app/) *(No installation required!)*
+**Try the live version:** [**Stock Analysis Pro**](https://stock-analysis-pro.streamlit.app/) _(No installation required!)_
 
 ## 🛠️ Technology Stack
 
