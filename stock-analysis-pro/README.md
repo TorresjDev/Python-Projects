@@ -4,9 +4,15 @@
 
 A comprehensive, professional-grade stock analysis application that provides real-time market data, interactive charts, and detailed financial insights in a modern, Robinhood-style interface.
 
-![Status](https://img.shields.io/badge/Status-In%20Development-yellow)
+![Status](https://img.shields.io/badge/Status-Live-green)
 ![Python](https://img.shields.io/badge/Python-3.8+-blue)
-![Streamlit](https://img.shields.io/badge/Streamlit-1.28+-red)
+![Streamlit](https://img.shields.io/badge/Streamlit-1.48+-red)
+
+## 🌐 Live Application
+
+**Try it now:** [**Stock Analysis Pro - Live Demo**](https://stock-analysis-pro.streamlit.app/)
+
+✨ *Experience professional-grade stock analysis directly in your browser!*
 
 ## ✨ Features
 
@@ -56,6 +62,10 @@ streamlit run main.py
 
 5. **Open your browser:**
    Navigate to `http://localhost:8501`
+
+**OR**
+
+**Try the live version:** [**Stock Analysis Pro**](https://stock-analysis-pro.streamlit.app/) *(No installation required!)*
 
 ## 🛠️ Technology Stack
 
