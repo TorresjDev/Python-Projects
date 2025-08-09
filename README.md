@@ -19,6 +19,15 @@ This collection showcases multiple Python-based projects for data analysis, visu
 - **Key Features:** Multi-turn conversations, ...
 - **Live Demo:** [Try it Live on Streamlit Cloud](https://gemini-chatbot-app-btde8kwdrhhftiappiw9nky.streamlit.app/)
 
+### 📈 [Stock Analysis Pro](https://github.com/TorresjDev/Python-Programs/tree/main/stock-analysis-pro)
+
+- **Description:**  
+  Professional-grade stock market analysis dashboard with real-time data, interactive charts, and comprehensive financial insights in a modern Robinhood-style interface
+- **Location:** [stock-analysis-pro/](stock-analysis-pro/)
+- **Key Features:** Real-time updates, interactive candlestick charts, technical indicators, comprehensive statistics, responsive design
+- **Tech Stack:** Streamlit 1.48+, yfinance, Plotly, Pandas
+- **Live Demo:** [**Try Stock Analysis Pro**](https://stock-analysis-pro.streamlit.app/)
+
 ### 📈 Stock Data Application
 
 - **Description:**  
@@ -106,8 +115,11 @@ Python-Programs/
 ├── gemini-chatbot-streamlit/     # Modern conversational chatbot with Streamlit
 ├── social-media-analyzer/        # Social media post analysis with dynamic author selection
 ├── sound-wave-analysis/          # Advanced audio analysis and signal processing
+├── stock-analysis-pro/           # Professional stock analysis dashboard (LIVE)
 ├── stock-data-app/               # Streamlit web app
 ├── stock-data-with-yfinance/     # Data analysis & visualization script
+├── stock-monitor-app/            # Real-time stock & crypto monitoring
+├── web-scrapper/                 # Flexible web scraping tool
 └── README.md                     # This documentation
 ```
 
