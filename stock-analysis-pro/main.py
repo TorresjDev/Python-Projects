@@ -1,11 +1,9 @@
 """
 Stock Analysis Pro - Main Application
 Entry point that orchestrates the application
-
-Created by: Jesus Torres
-Date: August 9, 2025
 """
 
+from streamlit import user
 import config
 import stock_analyzer
 import ui
@@ -18,15 +16,11 @@ def main():
     analyzer = stock_analyzer.StockAnalyzer(config_manager)
     user_interface = ui.UI(config_manager, analyzer)
 
-    # Setup UI
+    # Setup UI with Streamlit
     user_interface.setup_page()
 
     # Initialize session state for stock data persistence
-    import streamlit as st
-    if 'stock_data' not in st.session_state:
-        st.session_state.stock_data = None
-    if 'current_symbol' not in st.session_state:
-        st.session_state.current_symbol = None
+    user_interface._initialize_session_state()
 
     # Header Container - Contains header and search
     user_interface.display_header()
@@ -41,17 +35,17 @@ def main():
 
                 if hist_data is not None and stock_info:
                     # Store in session state
-                    st.session_state.stock_data = (hist_data, stock_info)
-                    st.session_state.current_symbol = symbol
+                    user_interface.store_stock_data(
+                        hist_data, stock_info, symbol)
                 else:
-                    st.error("❌ Unable to fetch stock data. Please try again.")
+                    user_interface.show_error(
+                        "❌ Unable to fetch stock data. Please try again.")
         else:
             user_interface.show_validation_error(symbol)
 
     # Stock Data Container - Contains all stock analysis components
-    if st.session_state.stock_data is not None and st.session_state.current_symbol:
-        hist_data, stock_info = st.session_state.stock_data
-        current_symbol = st.session_state.current_symbol
+    if user_interface.has_stock_data():
+        hist_data, stock_info, current_symbol = user_interface.get_stored_stock_data()
 
         with user_interface.create_stock_data_container():
             # Display all stock analysis components

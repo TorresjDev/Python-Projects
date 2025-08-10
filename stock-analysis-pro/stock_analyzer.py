@@ -2,8 +2,6 @@
 Stock Analyzer class
 Handles stock analysis logic and data processing
 
-Created by: Jesus Torres
-Date: August 9, 2025
 """
 
 import yfinance as yf
@@ -64,7 +62,8 @@ class StockAnalyzer:
         """Create interactive price chart"""
         if data is None or data.empty:
             return None
-
+        print(f"Creating price chart for {symbol} with period {period}")
+        print(f"Data: {data}")
         fig = go.Figure()
         fig.add_trace(go.Candlestick(
             x=data.index,
@@ -139,6 +138,9 @@ class StockAnalyzer:
         avg_volume = hist_data['Volume'].rolling(
             window=20).mean().iloc[-1] if len(hist_data) >= 20 else volume
 
+        print(f"stock_info: {stock_info}")
+        print(f"hist_data: {hist_data}")
+
         return {
             "Market Cap": self.format_large_number(stock_info.get('marketCap', 0)) if stock_info.get('marketCap') else "N/A",
             "P/E Ratio": f"{stock_info.get('trailingPE', 0):.2f}" if isinstance(stock_info.get('trailingPE'), (int, float)) else "N/A",
@@ -147,13 +149,13 @@ class StockAnalyzer:
             "52W High": f"${stock_info.get('fiftyTwoWeekHigh', 'N/A')}",
             "52W Low": f"${stock_info.get('fiftyTwoWeekLow', 'N/A')}",
             "Beta": f"{stock_info.get('beta', 'N/A')}",
-            "Dividend Yield": f"{stock_info.get('dividendYield', 0)*100:.2f}%" if stock_info.get('dividendYield') else "N/A"
-        }
+            "Dividend Yield": f"{stock_info.get('dividendYield', 0):.2f}%" if stock_info.get('dividendYield') else "N/A"}
 
     def get_company_info(self, stock_info):
         """Get formatted company information"""
         return {
             "Industry": stock_info.get('industry', 'N/A'),
+            "Sector": stock_info.get('sector', 'N/A'),
             "Employees": f"{stock_info.get('fullTimeEmployees', 0):,}" if stock_info.get('fullTimeEmployees') else "N/A",
             "Founded": stock_info.get('foundationYear', 'N/A'),
             "Headquarters": f"{stock_info.get('city', '')}, {stock_info.get('country', '')}" if stock_info.get('city') else 'N/A',
