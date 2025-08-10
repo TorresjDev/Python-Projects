@@ -2,8 +2,6 @@
 Stock Analysis Pro - Main Application
 Entry point that orchestrates the application
 
-Created by: Jesus Torres
-Date: August 9, 2025
 """
 
 import config

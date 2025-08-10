@@ -2,8 +2,6 @@
 UI components
 Handles all Streamlit interface components
 
-Created by: Jesus Torres
-Date: August 9, 2025
 """
 
 import streamlit as st
@@ -146,16 +144,18 @@ class UI:
         with col2:
             selected_period = st.selectbox(
                 "📅 Time Period",
-                ["1mo", "3mo", "6mo", "1y", "2y", "5y"],
+                ["1MO", "3MO", "6MO", "1Y",
+                    "2Y", "5Y", "10Y", "YTD", "MAX"],
                 index=3,
-                key="chart_period"
+                key="chart_period",
+                width=300
             )
 
         # If period changed, fetch new data for the charts
         if selected_period != period:
             with st.spinner(f"📊 Loading {selected_period} data..."):
                 new_hist_data, _ = self.analyzer.get_stock_data(
-                    symbol, period=selected_period)
+                    symbol, period=selected_period.lower())
                 if new_hist_data is not None:
                     hist_data = new_hist_data
 
