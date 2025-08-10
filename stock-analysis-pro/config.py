@@ -1,7 +1,6 @@
 """
 Configuration file
 Handles environment setup and API configuration
-
 """
 
 import os
@@ -27,10 +26,9 @@ class Config:
             load_dotenv()
 
             # API Keys
-            # self.api_keys = {
-            #     'coinmarketcap': os.getenv("COINMARKETCAP_API_KEY"),
-            #     'google': os.getenv("GOOGLE_API_KEY")
-            # }
+            self.api_keys = {
+                'coinmarketcap': os.getenv("COINMARKETCAP_API_KEY"),
+            }
 
             # Application Settings
             self.app_settings = {
@@ -75,9 +73,5 @@ class Config:
         if not self.api_keys.get('coinmarketcap'):
             warnings.append(
                 "COINMARKETCAP_API_KEY not found - crypto features will be disabled")
-
-      #   if not self.api_keys.get('google'):
-      #       warnings.append(
-      #           "GOOGLE_API_KEY not found - AI features will be disabled")
 
         return warnings

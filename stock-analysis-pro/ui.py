@@ -1,7 +1,6 @@
 """
 UI components
 Handles all Streamlit interface components
-
 """
 
 import streamlit as st
@@ -25,6 +24,39 @@ class UI:
             initial_sidebar_state="collapsed"
         )
         self._inject_custom_css()
+        self._initialize_session_state()
+
+    def _initialize_session_state(self):
+        """Initialize session state variables"""
+        if 'stock_data' not in st.session_state:
+            st.session_state.stock_data = None
+        if 'current_symbol' not in st.session_state:
+            st.session_state.current_symbol = None
+
+    def create_header_container(self):
+        """Create and return the header container"""
+        return st.container(width="stretch", border=True)
+
+    def create_stock_data_container(self):
+        """Create and return the stock data container"""
+        return st.container(width="stretch", border=True)
+
+    def store_stock_data(self, hist_data, stock_info, symbol):
+        """Store stock data in session state"""
+        st.session_state.stock_data = (hist_data, stock_info)
+        st.session_state.current_symbol = symbol
+
+    def get_stored_stock_data(self):
+        """Get stored stock data from session state"""
+        if st.session_state.stock_data is not None and st.session_state.current_symbol:
+            hist_data, stock_info = st.session_state.stock_data
+            current_symbol = st.session_state.current_symbol
+            return hist_data, stock_info, current_symbol
+        return None, None, None
+
+    def has_stock_data(self):
+        """Check if stock data exists in session state"""
+        return st.session_state.stock_data is not None and st.session_state.current_symbol
 
     def display_header(self):
         """Display application header"""
@@ -41,40 +73,6 @@ class UI:
             </div>
             """, unsafe_allow_html=True)
 
-    def show_stock_search(self):
-        """Display stock search interface"""
-        with st.container():
-            col1, col2, col3 = st.columns(
-                [5, 2, 5], gap="large", vertical_alignment="bottom")
-            with col2:
-                # Centered Search Stock header
-               #  st.write("### 🔍 Search Stock")
-
-                st.markdown("""
-                     <div style='text-align: center'>
-                        <h3>
-                           🔍 Search Stock
-                        </h3>
-                     </div>
-                     """, unsafe_allow_html=True)
-
-                symbol = st.text_input(
-                    "Enter stock symbol",
-                    placeholder="e.g., AAPL, GOOGL, TSLA",
-                    max_chars=10,
-                    key="stock_symbol",
-                    width=500
-                ).upper().strip()
-
-                # Search button
-                search_clicked = st.button(
-                    "🔍 Analyze Stock",
-                    use_container_width=True,
-                    type="primary"
-                )
-
-                return symbol, search_clicked
-
     def display_real_time_indicator(self):
         """Display real-time update indicator"""
         current_time = datetime.now().strftime("%H:%M:%S")
@@ -83,11 +81,6 @@ class UI:
             🔴 Live • Last updated: {current_time} • Updates every 10 seconds
         </div>
         """, unsafe_allow_html=True)
-
-    def show_validation_error(self, symbol):
-        """Show validation error message"""
-        st.error(f"❌ **'{symbol}' is not a valid stock symbol**")
-        st.info("💡 Try searching for: AAPL, GOOGL, TSLA, MSFT, AMZN, NVDA")
 
     def display_stock_overview(self, symbol, stock_info, hist_data):
         """Display stock overview section"""
@@ -101,14 +94,13 @@ class UI:
             color = "#4CAF50" if change >= 0 else "#f44336"
             arrow = "↗" if change >= 0 else "↘"
 
-            # Add some spacing and center the columns
-            col_spacer1, col1, col_spacer2, col2, col_spacer3 = st.columns(
-                [2, 2, 0.5, 2, 2])
+            # Responsive column layout
+            col1, col2 = st.columns([1, 1], gap="medium")
 
             with col1:
                 st.markdown(f"""
                 <div style='display: flex; justify-content: center;'>
-                    <div class='stock-card' style='height: 120px; width: fit-content; display: flex; flex-direction: column; justify-content: center; text-align: center;'>
+                    <div class='stock-card' style='height: 120px; width: 100%; max-width: 300px; display: flex; flex-direction: column; justify-content: center; text-align: center; box-sizing: border-box; padding: 4.5rem 0px;'>
                         <h2 style='color: #333; margin: 0;'>{stock_info.get('longName', symbol)}</h2>
                         <h3 style='color: #666; margin: 0; font-size: 16px;'>{symbol}</h3>
                     </div>
@@ -118,7 +110,7 @@ class UI:
             with col2:
                 st.markdown(f"""
                 <div style='display: flex; justify-content: center;'>
-                    <div class='stock-card' style='height: 120px; width: fit-content; display: flex; flex-direction: column; justify-content: center; text-align: right;'>
+                    <div class='stock-card' style='height: 120px; width: 100%; max-width: 300px; display: flex; flex-direction: column; justify-content: center; text-align: right; box-sizing: border-box; padding: 4rem 0px;'>
                         <h1 style='color: #333; margin: 0;'>${current_price:.2f}</h1>
                         <h3 style='color: {color}; margin: 0;'>
                             {arrow} ${change:.2f} ({pct_change:+.2f}%)
@@ -129,7 +121,6 @@ class UI:
 
     def display_charts(self, symbol, hist_data, period):
         """Display price and volume charts"""
-      #   st.subheader("📊 Price Analysis", divider="green", width="content")
 
         st.markdown("""
             <div style='text-align: center'>
@@ -139,16 +130,22 @@ class UI:
             </div>
             """, unsafe_allow_html=True)
 
-        # Chart period selector
-        col1, col2, col3 = st.columns([1, 2, 1])
+      # Centered Chart period selector
+        st.markdown("""
+         <div style='text-align: center; margin: 1rem 0 0 0;'>
+               <h4 style='color: #666;'>📅 Time Period</h4>
+         </div>
+         """, unsafe_allow_html=True)
+
+      # Center the selectbox
+        col1, col2, col3 = st.columns([1, 1, 1])
         with col2:
             selected_period = st.selectbox(
-                "📅 Time Period",
-                ["1MO", "3MO", "6MO", "1Y",
-                    "2Y", "5Y", "10Y", "YTD", "MAX"],
+                "Time Period",
+                ["1MO", "3MO", "6MO", "1Y", "2Y", "5Y", "10Y", "YTD", "MAX"],
                 index=3,
                 key="chart_period",
-                width=300
+                label_visibility="collapsed"  # Hide the label since we show it above
             )
 
         # If period changed, fetch new data for the charts
@@ -219,17 +216,50 @@ class UI:
             st.markdown("### 📋 Business Summary")
             st.write(description)
 
+    def show_stock_search(self):
+        """Display stock search interface"""
+        with st.container():
+            col1, col2, col3 = st.columns(
+                [4, 2, 4], gap="medium", vertical_alignment="bottom")
+            with col2:
+                # Centered Search Stock header
+                st.markdown("""
+                     <div style='text-align: center'>
+                        <h3>
+                           🔍 Search Stock
+                        </h3>
+                     </div>
+                     """, unsafe_allow_html=True)
+
+                symbol = st.text_input(
+                    "Enter stock symbol",
+                    placeholder="e.g., NVDA, MSFT, TSLA, AAPL",
+                    max_chars=10,
+                    key="stock_symbol",
+                    width=500
+                ).upper().strip()
+
+                # Search button
+                search_clicked = st.button(
+                    "🔍 Analyze Stock",
+                    use_container_width=True,
+                    type="secondary"
+                )
+
+                return symbol, search_clicked
+
     def show_loading(self, message="Loading..."):
         """Show loading indicator"""
         return st.spinner(message)
 
-    def create_header_container(self):
-        """Create and return the header container"""
-        return st.container(width="stretch", border=True)
+    def show_error(self, message):
+        """Display error message"""
+        st.error(message)
 
-    def create_stock_data_container(self):
-        """Create and return the stock data container"""
-        return st.container(width="stretch", border=True)
+    def show_validation_error(self, symbol):
+        """Show validation error message"""
+        st.error(f"❌ **'{symbol}' is not a valid stock symbol**")
+        st.info("💡 Try searching for: TSLA, MSFT, NVDA, AAPL")
 
     def _inject_custom_css(self):
         """Inject custom CSS for Robinhood-style appearance"""
@@ -239,23 +269,8 @@ class UI:
             padding-top: 2rem;
         }
         
-        .stButton > button {
-            background: linear-gradient(90deg, #4CAF50, #45a049);
-            color: white;
-            border: none;
-            border-radius: 8px;
-            font-weight: 600;
-            transition: all 0.3s;
-        }
-        
-        .stButton > button:hover {
-            background: linear-gradient(90deg, #45a049, #4CAF50);
-            transform: translateY(-2px);
-        }
-        
         .stock-card {
             background: white;
-            padding: 1.5rem;
             border-radius: 12px;
             box-shadow: 0 2px 10px rgba(0,0,0,0.1);
             border-left: 4px solid #4CAF50;
@@ -289,7 +304,7 @@ class UI:
         div[data-testid="metric-container"] {
             background: white;
             border: 1px solid #e9ecef;
-            padding: 1rem;
+            padding: 1rem 0 0 0;
             border-radius: 8px;
             box-shadow: 0 1px 3px rgba(0,0,0,0.1);
         }
