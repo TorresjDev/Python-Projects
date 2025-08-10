@@ -1,2 +1,0 @@
-yfinance
-plotly.express

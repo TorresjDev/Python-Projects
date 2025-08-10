@@ -33,23 +33,6 @@ This collection showcases multiple Python-based projects for data analysis, visu
 - **Tech Stack:** Streamlit 1.48+, yfinance, Plotly, Pandas
 - **Live Demo:** [**Try Stock Analysis Pro**](https://stock-analysis-pro.streamlit.app/)
 
-### 📈 [Stock Data Application](https://github.com/TorresjDev/Python-Projects/tree/main/stock-data-app)
-
-- **Description:**  
-  An interactive Streamlit web app for exploring historical stock prices with customizable timeframes and visualization options
-- **Location:** [stock-data-app/](stock-data-app/)
-- **Key Features:** Historical stock data analysis, interactive charts, customizable timeframes
-- **Tech Stack:** Streamlit, yfinance, Plotly
-- **Live Demo:** [View on Streamlit Cloud](https://Python-Projects-v9puvb4eqw5cfalfr8qgdi.streamlit.app/)
-
-### 🍏 [Stock Data with yfinance](https://github.com/TorresjDev/Python-Projects/tree/main/stock-data-with-yfinance)
-
-- **Description:**  
-  A Python script that retrieves, analyzes, and visualizes 5 years of Apple Inc. stock data using the yfinance library
-- **Location:** [stock-data-with-yfinance/](stock-data-with-yfinance/)
-- **Key Features:** Apple stock analysis, 5-year historical data, data visualization, CSV export
-- **Tech Stack:** Python, yfinance, Matplotlib, Pandas
-
 ### 📊 [Stock & Crypto Monitor App](https://github.com/TorresjDev/Python-Projects/tree/main/stock-monitor-app)
 
 - **Description:**  
@@ -113,8 +96,6 @@ Python-Projects/
 ├── social-media-analyzer/        # Social media post analysis with dynamic author selection
 ├── sound-wave-analysis/          # Advanced audio analysis and signal processing
 ├── stock-analysis-pro/           # Professional stock analysis dashboard (LIVE)
-├── stock-data-app/               # Interactive stock data Streamlit app
-├── stock-data-with-yfinance/     # Apple stock data analysis & visualization
 ├── stock-monitor-app/            # Real-time stock & crypto monitoring
 ├── web-scrapper/                 # Flexible web scraping tool
 └── README.md                     # This documentation
@@ -128,7 +109,6 @@ Python-Projects/
 
 - **[Stock Analysis Pro](https://stock-analysis-pro.streamlit.app/)** - Professional stock analysis dashboard
 - **[Gemini Chatbot](https://gemini-chatbot-app-btde8kwdrhhftiappiw9nky.streamlit.app/)** - AI-powered conversational interface
-- **[Stock Data App](https://Python-Projects-v9puvb4eqw5cfalfr8qgdi.streamlit.app/)** - Interactive stock data explorer
 
 ---
 
@@ -167,15 +147,6 @@ Special thanks to:
 - Google for the Gemini API
 - Yahoo Finance and yfinance for stock data
 - All the amazing Python libraries that make these projects possible
-
----
-
-## 👨‍💻 Author
-
-**Jesus Torres**
-
-- GitHub: [@TorresjDev](https://github.com/TorresjDev)
-- Repository: [Python-Projects](https://github.com/TorresjDev/Python-Projects)
 
 ---
 
