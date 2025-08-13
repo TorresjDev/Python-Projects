@@ -63,6 +63,8 @@ class CryptoAnalyzer:
                 crypto_data = data["data"][symbol.upper()]
 
                 self._cache_data(cache_key, crypto_data)
+                print(
+                    f"Fetched crypto data for {symbol.upper()}: {crypto_data}")
                 return crypto_data
             return None
         except Exception:
@@ -79,31 +81,72 @@ class CryptoAnalyzer:
 
             current_price = current_data["quote"]["USD"]["price"]
 
-            # Generate mock historical data for demonstration
+            # Generate more realistic historical data for demonstration
             dates = pd.date_range(end=datetime.now(), periods=days, freq='D')
-            prices = []
-            base_price = current_price
 
+            # Create realistic price movements
+            base_prices = []
+            current_price_working = current_price
+
+            # Work backwards from current price to create realistic historical trend
             for i in range(days):
-                # Add some realistic price variation
-                variation = (hash(f"{symbol}_{i}") %
-                             200 - 100) / 1000  # -10% to +10% variation
-                price = base_price * \
-                    (1 + variation * (i / days))  # Gradual trend
-                prices.append(max(price, 0.01))  # Ensure positive prices
+                # Create daily volatility (crypto is more volatile than stocks)
+                daily_change = (hash(f"{symbol}_{i}_daily") %
+                                200 - 100) / 100  # -100% to +100%
+                daily_volatility = daily_change * 0.05  # Scale to 5% max daily change
 
-            hist_data = pd.DataFrame({
-                'Date': dates,
-                'Close': prices,
-                'Open': [p * 0.995 for p in prices],  # Mock open prices
-                'High': [p * 1.02 for p in prices],   # Mock high prices
-                'Low': [p * 0.98 for p in prices],    # Mock low prices
-                'Volume': [1000000 + (hash(f"{symbol}_{i}_vol") % 5000000) for i in range(days)]
-            })
-            hist_data.set_index('Date', inplace=True)
+                # Add weekly trend
+                weekly_trend = (hash(f"{symbol}_{i//7}_weekly") %
+                                100 - 50) / 1000  # Weekly trend
 
-            return hist_data
-        except Exception:
+                # Calculate price for this day
+                price_change = daily_volatility + weekly_trend
+                current_price_working *= (1 + price_change)
+                current_price_working = max(
+                    current_price_working, 0.001)  # Ensure positive
+
+                base_prices.append(current_price_working)
+
+            # Reverse to get chronological order
+            base_prices.reverse()
+
+            # Generate OHLC data from base prices
+            ohlc_data = []
+            for i, base_price in enumerate(base_prices):
+                # Generate realistic OHLC from base price
+                # 0-10% intraday range
+                daily_volatility = (
+                    hash(f"{symbol}_{i}_intraday") % 100) / 1000
+
+                # Create open, high, low, close
+                open_price = base_price * \
+                    (1 + (hash(f"{symbol}_{i}_open") % 40 - 20) / 1000)
+                close_price = base_price * \
+                    (1 + (hash(f"{symbol}_{i}_close") % 40 - 20) / 1000)
+
+                high_price = max(open_price, close_price) * \
+                    (1 + daily_volatility)
+                low_price = min(open_price, close_price) * \
+                    (1 - daily_volatility)
+
+                # Ensure logical OHLC relationship
+                high_price = max(high_price, open_price, close_price)
+                low_price = min(low_price, open_price, close_price)
+
+                ohlc_data.append({
+                    'Open': max(open_price, 0.001),
+                    'High': max(high_price, 0.001),
+                    'Low': max(low_price, 0.001),
+                    'Close': max(close_price, 0.001),
+                    # 1M-11M volume
+                    'Volume': 1000000 + (hash(f"{symbol}_{i}_vol") % 10000000)
+                })
+
+            data = pd.DataFrame(ohlc_data, index=dates)
+            return data
+
+        except Exception as e:
+            print(f"Error generating crypto historical data: {e}")
             return None
 
     def calculate_price_change(self, current_price, previous_price):
@@ -114,64 +157,102 @@ class CryptoAnalyzer:
         pct_change = (change / previous_price) * 100
         return change, pct_change
 
-    def create_crypto_price_chart(self, hist_data, symbol):
+    def create_crypto_price_chart(self, data, symbol):
         """Create interactive crypto price chart"""
-        if hist_data is None or hist_data.empty:
+        if data is None or data.empty:
             return None
 
         fig = go.Figure()
+
+        # Create candlestick chart with proper colors
         fig.add_trace(go.Candlestick(
-            x=hist_data.index,
-            open=hist_data['Open'],
-            high=hist_data['High'],
-            low=hist_data['Low'],
-            close=hist_data['Close'],
+            x=data.index,
+            open=data['Open'],
+            high=data['High'],
+            low=data['Low'],
+            close=data['Close'],
             name=symbol,
             increasing_line_color=self.config.chart_settings['colors']['positive'],
             decreasing_line_color=self.config.chart_settings['colors']['negative'],
             increasing_fillcolor="rgba(16, 185, 129, 0.3)",
-            decreasing_fillcolor="rgba(239, 68, 68, 0.3)"
+            decreasing_fillcolor="rgba(239, 68, 68, 0.3)",
+            line=dict(width=1),
+            increasing_line_width=1,
+            decreasing_line_width=1
         ))
 
         fig.update_layout(
             title=f'{symbol} Crypto Price',
             yaxis_title='Price (USD)',
             xaxis_title='Date',
-            template=self.config.chart_settings['theme'],
+            template='plotly_white',
             height=500,
             showlegend=False,
-            margin=dict(l=50, r=50, t=50, b=50)
+            margin=dict(l=50, r=50, t=50, b=50),
         )
-        fig.update_xaxes(rangeslider_visible=False)
+
+        # Remove range slider and configure x-axis
+        fig.update_xaxes(
+            rangeslider_visible=False,
+            showgrid=True,
+            gridwidth=1,
+            gridcolor='rgba(128,128,128,0.2)'
+        )
+
+        # Configure y-axis
+        fig.update_yaxes(
+            showgrid=True,
+            gridwidth=1,
+            gridcolor='rgba(128,128,128,0.2)'
+        )
+
         return fig
 
-    def create_crypto_volume_chart(self, hist_data, symbol):
+    def create_crypto_volume_chart(self, data, symbol):
         """Create crypto volume chart"""
-        if hist_data is None or hist_data.empty:
+        if data is None or data.empty:
             return None
 
         fig = go.Figure()
+
+        # Create volume bars with colors based on price movement
         colors = [self.config.chart_settings['colors']['positive'] if close >= open_price
                   else self.config.chart_settings['colors']['negative']
-                  for close, open_price in zip(hist_data['Close'], hist_data['Open'])]
+                  for close, open_price in zip(data['Close'], data['Open'])]
 
         fig.add_trace(go.Bar(
-            x=hist_data.index,
-            y=hist_data['Volume'],
+            x=data.index,
+            y=data['Volume'],
             marker_color=colors,
             name='Volume',
-            opacity=0.7
+            opacity=0.7,
+            marker_line_width=0
         ))
 
         fig.update_layout(
             title=f'{symbol} Trading Volume',
             yaxis_title='Volume',
             xaxis_title='Date',
-            template=self.config.chart_settings['theme'],
+            template='plotly_white',
             height=200,
             showlegend=False,
-            margin=dict(l=50, r=50, t=30, b=30)
+            margin=dict(l=50, r=50, t=30, b=30),
+
         )
+
+        # Configure axes
+        fig.update_xaxes(
+            showgrid=True,
+            gridwidth=1,
+            gridcolor='rgba(128,128,128,0.2)'
+        )
+
+        fig.update_yaxes(
+            showgrid=True,
+            gridwidth=1,
+            gridcolor='rgba(128,128,128,0.2)'
+        )
+
         return fig
 
     def format_large_number(self, num):
@@ -194,6 +275,7 @@ class CryptoAnalyzer:
 
             return {
                 "Market Cap": self.format_large_number(quote_data.get("market_cap", 0)),
+                "Market Dominance": f"{quote_data.get('market_cap_dominance', 0):.2f}%",
                 "Volume (24h)": self.format_large_number(quote_data.get("volume_24h", 0)),
                 "Volume Change (24h)": f"{quote_data.get('volume_change_24h', 0):.2f}%",
                 "Price Change (1h)": f"{quote_data.get('percent_change_1h', 0):.2f}%",
