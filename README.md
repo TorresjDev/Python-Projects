@@ -33,14 +33,6 @@ This collection showcases multiple Python-based projects for data analysis, visu
 - **Tech Stack:** Streamlit 1.48+, yfinance, Plotly, Pandas
 - **Live Demo:** [**Try Stock Analysis Pro**](https://stock-analysis-pro.streamlit.app/)
 
-### 📊 [Stock & Crypto Monitor App](https://github.com/TorresjDev/Python-Projects/tree/main/stock-monitor-app)
-
-- **Description:**  
-  An interactive Streamlit web application for real-time stock and cryptocurrency monitoring with live price updates
-- **Location:** [stock-monitor-app/](stock-monitor-app/)
-- **Key Features:** Real-time stock data via Yahoo Finance, cryptocurrency tracking via CoinMarketCap API, interactive charts, multi-asset monitoring dashboard
-- **Tech Stack:** Streamlit, yfinance, CoinMarketCap API, python-dotenv
-
 ### 📱 [Social Media Post Analysis Application](https://github.com/TorresjDev/Python-Projects/tree/main/social-media-analyzer)
 
 - **Description:**  
@@ -96,7 +88,6 @@ Python-Projects/
 ├── social-media-analyzer/        # Social media post analysis with dynamic author selection
 ├── sound-wave-analysis/          # Advanced audio analysis and signal processing
 ├── stock-analysis-pro/           # Professional stock analysis dashboard (LIVE)
-├── stock-monitor-app/            # Real-time stock & crypto monitoring
 ├── web-scrapper/                 # Flexible web scraping tool
 └── README.md                     # This documentation
 ```

@@ -75,19 +75,33 @@ class StockAnalyzer:
             increasing_line_color=self.config.chart_settings['colors']['positive'],
             decreasing_line_color=self.config.chart_settings['colors']['negative'],
             increasing_fillcolor="rgba(16, 185, 129, 0.3)",
-            decreasing_fillcolor="rgba(239, 68, 68, 0.3)"
+            decreasing_fillcolor="rgba(239, 68, 68, 0.3)",
         ))
 
         fig.update_layout(
             title=f'{symbol} Stock Price',
             yaxis_title='Price (USD)',
             xaxis_title='Date',
-            template=self.config.chart_settings['theme'],
+            template='plotly_white',
             height=500,
             showlegend=False,
-            margin=dict(l=50, r=50, t=50, b=50)
+            margin=dict(l=50, r=50, t=50, b=50),
+
         )
-        fig.update_xaxes(rangeslider_visible=False)
+        fig.update_xaxes(
+            rangeslider_visible=False,
+            showgrid=True,
+            gridwidth=1,
+            gridcolor='rgba(128,128,128,0.2)'
+        )
+
+        # Configure y-axis
+        fig.update_yaxes(
+            showgrid=True,
+            gridwidth=1,
+            gridcolor='rgba(128,128,128,0.2)'
+        )
+
         return fig
 
     def create_volume_chart(self, data, symbol):
